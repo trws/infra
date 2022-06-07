@@ -1106,6 +1106,30 @@ libraries:
           - mfem
         after_stage_script:
           - cp /home/ubuntu/infra/bin/resources/mfem_config.hpp config/_config.hpp
+      camp:
+        type: github
+        method: nightlyclone
+        repo: llnl/camp
+        build_type: cmake
+        lib_type: static
+        make_targets:
+          - camp
+        targets:
+          - trunk
+        staticliblink:
+          - camp
+      raja:
+        type: github
+        method: nightlyclone
+        repo: llnl/raja
+        build_type: cmake
+        lib_type: static
+        make_targets:
+          - RAJA
+        targets:
+          - trunk
+        staticliblink:
+          - RAJA
       ofw:
         type: github
         method: nightlyclone
